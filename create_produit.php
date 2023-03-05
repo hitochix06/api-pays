@@ -56,8 +56,8 @@ if (isset($_POST['bouton'])) {
                   <input class="form-control" name="image" type="file" id="formFile">
                 </div>
                 <div class="mb-3">
-                <label for="Description" class="form-label">Description</label>
-                  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <label for="description" class="form-label">Description</label>
+                  <textarea class="form-control" id="description" name="description" rows="3"></textarea>
                 </div>
                 <div class="mb-3">
                   <label for="prix">Prix du produit</label>
