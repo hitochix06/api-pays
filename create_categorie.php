@@ -38,6 +38,7 @@ if (!empty($_POST)) {
               </div>
               <input  type="submit" value="Crée" class="validate-button">
             </form>
+            </br>
             <!-- Message de sortie -->
             <?php if ($msg): ?>
             <h5><?=$msg?></h5>
