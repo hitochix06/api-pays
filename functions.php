@@ -1,9 +1,9 @@
 <?php
 function pdo_connect_mysql() {
-    $DATABASE_HOST = 'localhostdb5012180917.hosting-data.io';
-    $DATABASE_USER = 'dbu711673';
-    $DATABASE_PASS = 'qtJY#QXNY45NajtM';
-    $DATABASE_NAME = 'dbs10248647';
+    $DATABASE_HOST = 'localhost';
+    $DATABASE_USER = 'root';
+    $DATABASE_PASS = '';
+    $DATABASE_NAME = 'phpproduit';
     try {
     	return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
     } catch (PDOException $exception) {
