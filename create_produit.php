@@ -70,13 +70,17 @@ if (isset($_POST['bouton'])) {
                       <option value="<?= $produit['id'] ?>"><?= $produit['type'] ?></option>
                       <?php endforeach; ?>
                    </select>
-                </div>
-                </div> 
+                  </div>
+                  </div> 
                 </div>
               </div>
-              <input  type="submit" name="bouton"value="Ajouter" class="validate-button">
-          </form>
-            
+                  <!-- Bouton --> 
+                <input  type="submit" name="bouton"value="Ajouter" class="validate-button">
+                </br>
+            </div>
+          </div>
+        </main>
+      </form>
 </div>
 
 

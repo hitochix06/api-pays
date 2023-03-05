@@ -67,12 +67,12 @@ if (isset($_GET['id'])) {
                   <label for="Description" class="form-label">Description</label>
                   <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
                 </div>
-
+                
                 <div class="mb-3">
                   <label for="prix">Prix du produit</label>
                   <input type="number" name="prix" placeholder="Prix du produit" id="prix" required />
-                <div class="col-md-4">
 
+                <div class="col-md-4">
                 <label for="inputState" class="form-label">Nom Categorie</label>
                     <select class="form-select" name="categorie" aria-label="Default select example">
                       <option selected>Choisir une catégorie</option>
@@ -83,7 +83,18 @@ if (isset($_GET['id'])) {
                     </select>
                 </div>
               </div>
-              <input  type="submit" name="bouton"value="Modifier" class="validate-button">
+              </div>
+              </div>
+                <!-- Bouton --> 
+                <input  type="submit" name="bouton"value="Modifier" class="validate-button">
+                </br>
+              </div>
+              </div>
+              </div>
+              </div>
+              
+              </div>
+           
          </form>
 </div>
 </body>
