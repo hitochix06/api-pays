@@ -48,6 +48,7 @@ if (isset($_GET['id'])) {
             </div>
           </div>
       </form>
+      </br>
 <!-- Message de sortie -->
     <?php if ($msg): ?>
     <h5><?=$msg?></h5>
