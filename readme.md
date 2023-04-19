@@ -45,10 +45,10 @@
 
 ## Steps
 
-1. composer require twig/twig
-2. clean functions.php
-3. import autoload in functions.php
-4.
+1. demo api
+2. composer require twig/twig
+3. clean functions.php
+4. import autoload in functions.php
 
 ```php
 $request = $_SERVER['REQUEST_URI'];
