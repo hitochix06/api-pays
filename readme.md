@@ -23,12 +23,25 @@
   ````
 - `$_FILES` https://www.php.net/manual/fr/reserved.variables.files
 - https://php.net/manual/en/function.move-uploaded-file.php
-- $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `prix`, `categorie_id`) VALUES (?,?,?,?,?,?)');
+- `$pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `prix`, `categorie_id`) VALUES (?,?,?,?,?,?)');`
+
   https://www.php.net/manual/fr/pdo.prepare
 
   https://www.cloudflare.com/fr-fr/learning/security/threats/sql-injection/
 
   ![Injection SQL](https://www.cloudflare.com/img/learning/security/threats/sql-injection-attack/sql-injection-infographic.png)
+
+## XSS
+
+![XSS](https://www.cloudflare.com/img/learning/security/threats/cross-site-scripting/xss-attack.png)
+
+## Brute Force
+
+![Brute Force](https://www.thesslstore.com/blog/wp-content/uploads/2021/06/brute-force-attack-example.png)
+
+## CSRF
+
+![CSRF](https://images.ctfassets.net/4un77bcsnjzw/1kzDKGcv6RLKG8nxaqmyW9/f15d8c2142ce542cbfc9348326969071/DiagramExport__1_.svg)
 
 ## Steps
 
