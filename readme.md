@@ -22,4 +22,9 @@
 
 1. composer require twig/twig
 2. clean functions.php
-3.
+3. import autoload in functions.php
+4.
+
+https://alexcican.com/post/how-to-remove-php-html-htm-extensions-with-htaccess/
+https://www.htaccessredirect.net/
+https://www.taniarascia.com/the-simplest-php-router/

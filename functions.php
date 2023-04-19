@@ -1,4 +1,5 @@
 <?php
+require 'vendor/autoload.php';
 function pdo_connect_mysql()
 {
 	$DATABASE_HOST = 'localhost';
@@ -16,3 +17,11 @@ $pdo = pdo_connect_mysql();
 $query = $pdo->prepare('SELECT * FROM categorie');
 $query->execute();
 $categories = $query->fetchAll(PDO::FETCH_ASSOC);
+
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '/templates');
+
+$twig = new \Twig\Environment($loader, [
+	'cache' => __DIR__ . '/cache',
+	'debug' => true
+]);
+$twig->addExtension(new \Twig\Extension\DebugExtension());

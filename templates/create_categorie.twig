@@ -1,0 +1,43 @@
+ 
+{% extends "base.twig" %}
+
+
+{% block title %}Create categorie{% endblock %}
+
+
+{% block main %}
+ 
+ <!-- Conteneur principal -->
+  <div id="mainContainer">
+    <div class="form">
+      <!-- Contenu principal -->
+      <main class="main-content">
+        <!-- En-tête -->
+        <div class="heading">
+          <span class="material-icons"> add </span>
+          Ajouter un Catégorie
+        </div>
+        <form action="create_categorie" method="post">
+          <!-- Contenu -->
+          <div class="content">
+            <!-- Ajout de produit -->
+            <div id="addProductForm" class="product-form">
+              <!-- Nom et type-->
+              <div class="input-row">
+                <div class="input-group">
+                    <div class="mb-3">                     
+                      <label for="type" >Nom Categorie</label>                     
+                      <input type="text" name="type" class="form-control" required/>                   
+                    </div>
+                </div>
+              </div>
+              <input  type="submit" value="Crée" class="validate-button">
+            </form>
+            </br>
+            <!-- Message de sortie -->
+            {% if msg %}
+            <h5>{{msg}}</h5>
+            {% endif %}
+</div>
+
+{% endblock %}
