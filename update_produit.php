@@ -7,7 +7,7 @@ if (isset($_GET['id'])) {
 
   $stmt = $pdo->prepare('SELECT * FROM produits WHERE id = ?');
   $stmt->execute([$_GET['id']]);
-  $produits = $stmt->fetch(PDO::FETCH_ASSOC);
+  $produit = $stmt->fetch(PDO::FETCH_ASSOC);
 
   if (isset($_POST['bouton'])) {
 
@@ -18,7 +18,7 @@ if (isset($_GET['id'])) {
     $categorie = $_POST['categorie'];
 
     if (!empty($_FILES['image']['name'])) {
-      unlink('images/' . $produits['image']);
+      unlink('images/' . $produit['image']);
       $new_image = $_FILES["image"]["name"];
       $tmpname = $_FILES["image"]["tmp_name"];
       $place = "images/";
@@ -33,5 +33,5 @@ if (isset($_GET['id'])) {
   }
 
 
-  echo $twig->render("update_produit.twig", array("produits" => $produits, "categories" => $categories));
+  echo $twig->render("update_produit.twig", array("produit" => $produit, "categories" => $categories));
 }
