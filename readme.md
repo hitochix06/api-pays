@@ -1,22 +1,34 @@
 # CRUD
 
-- include
+- include https://www.php.net/manual/fr/function.include.php
+- require https://www.php.net/manual/fr/function.require.php
 - PDO https://php.net/manual/en/pdostatement.execute.php
-- PDOException
-- <<<EOT
-- $\_POST
-- isset
-- empty
-- NULL
-- <?=
-- <?php if ($msg): ?>
-- <?php endif; ?>
-- foreach ($produits as $categorie) :
-- $categorie['id']
-- <?php endforeach; ?>
-- $\_FILES
+- PDOException https://www.php.net/manual/fr/class.pdoexception
+- <<<EOT https://www.php.net/manual/fr/language.types.string.php#language.types.string.syntax.nowdoc
+- `$_POST` https://www.php.net/manual/fr/reserved.variables.post
+- isset https://www.php.net/manual/fr/function.isset
+- empty https://www.php.net/manual/fr/function.empty.php
+- NULL https://www.php.net/manual/fr/language.types.null.php
+- ```php
+  <?=
+  ```
+- ```php
+    <?php if ($msg): ?>
+    <?php endif; ?>
+  ```
+- ````php
+  foreach ($produits as $categorie) :
+    $categorie['id']
+    <?php endforeach; ?>```
+  ````
+- `$_FILES` https://www.php.net/manual/fr/reserved.variables.files
 - https://php.net/manual/en/function.move-uploaded-file.php
 - $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `prix`, `categorie_id`) VALUES (?,?,?,?,?,?)');
+  https://www.php.net/manual/fr/pdo.prepare
+
+  https://www.cloudflare.com/fr-fr/learning/security/threats/sql-injection/
+
+  ![Injection SQL](https://www.cloudflare.com/img/learning/security/threats/sql-injection-attack/sql-injection-infographic.png)
 
 ## Steps
 
@@ -66,3 +78,7 @@ https://www.taniarascia.com/the-simplest-php-router/
 
 https://www.htaccessredirect.net/
 https://www.web2generators.com/apache-tools/htpasswd-generator
+
+```
+
+```
