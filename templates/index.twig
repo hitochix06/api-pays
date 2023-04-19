@@ -1,51 +1,54 @@
 {% extends "base.twig" %}
 
 
-{% block title %}Home{% endblock %}
+{% block title %}Accueil
+{% endblock %}
 
 
 {% block main %}
-<div class="content">
-	<h2>Toto</h2>
+	<div
+		class="content">
+		<!-- Conteneur principal -->
+		<div id="mainContainer">
+			<div
+				class="form">
+				<!-- Contenu principal -->
+				<main
+					class="main-content">
+					<!-- En-tête -->
+					<div class="heading">
+						Affichage produit
+					</div>
 
-  <!-- Conteneur principal -->
-  <div id="mainContainer">
-    <div class="form">
-      <!-- Contenu principal -->
-      <main class="main-content">
-        <!-- En-tête -->
-        <div class="heading">
-          Affichage produit
-        </div>
-  
-	<div class="content read">
-	    <a href="create_produit" class="create-contact" >Ajouter un produit</a>
-      <div class="container">
-  <br>
-  <div class="row">
-    
-    
-  {% for produit in produits %}
-      <div class="col-4 mb-5">
-        <div class="card" style="width: 18rem;">
-          <img src="./images/{{ produit.image }}" width="150px" height="200px" class="card-img-top" alt="...">
-          <div class="card-body">
-            <center>
-              <h5 class="card-title">{{ produit.nom }}</h5>
-              <p class="card-text">{{ produit.description }}</p>
-              <p class="card-text">{{ produit.type }}</p>
-              <p class="card-text">{{ produit.prix }} Euro</p>
-              <a href="update_produit.php?id={{ produit.id }}" class="btn btn-warning">Modifier</a>
-              <a href="delete_produit.php?id={{ produit.id }}" class="btn btn-danger">Supprimer</a> 
-            </center>
-            
-          </div>
-        </div>
-      </div>
-  {% endfor %}
-  </div>
-
-</div>
+					<div class="content read">
+						<a href="create_produit" class="create-contact">Ajouter un produit</a>
+						<div class="container">
+							<br>
+							<div class="row">
 
 
-{% endblock %}
+								{% for produit in produits %}
+									<div class="col-4 mb-5">
+										<div class="card" style="width: 18rem;">
+											<img src="./images/{{ produit.image }}" width="150px" height="200px" class="card-img-top" alt="...">
+											<div class="card-body">
+												<center>
+													<h5 class="card-title">{{ produit.nom }}</h5>
+													<p class="card-text">{{ produit.description }}</p>
+													<p class="card-text">{{ produit.type }}</p>
+													<p class="card-text">{{ produit.prix }}
+														Euro</p>
+													<a href="update_produit.php?id={{ produit.id }}" class="btn btn-warning">Modifier</a>
+													<a href="delete_produit.php?id={{ produit.id }}" class="btn btn-danger">Supprimer</a>
+												</center>
+
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+
+						</div>
+
+
+					{% endblock %}
