@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
---
+--`crud-php`
 -- Hôte : 127.0.0.1:3306
 -- Généré le : dim. 05 mars 2023 à 20:23
 -- Version du serveur : 8.0.31
