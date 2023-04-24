@@ -34,7 +34,7 @@
 								<div class="input-group">
 									<label for="id">ID</label>
 									<input type="text" name="id" placeholder="26" value="auto" id="id">
-									<label for="nom">Nom du produit</label>
+									<label for="nom">Nom du Pays</label>
 									<input type="text" name="nom" placeholder="Nom du produit" required/>
 									<div class="mb-3">
 										<label for="formFile" class="form-label">Image du produit</label>
@@ -45,8 +45,11 @@
 										<textarea class="form-control" id="description" name="description" rows="3"></textarea>
 									</div>
 									<div class="mb-3">
-										<label for="prix">Prix du produit</label>
-										<input type="number" name="prix" placeholder="Prix du produit" id="prix" required/>
+					      <!-- code pour choisir la date et l'heure actuelle -->
+                <label for="created">Date/Heurs</label>
+                <input type="datetime-local" name="created" value="<?= date('Y-m-d\TH:i') ?>" id="created">
+										<label for="note">Note</label>
+										<input type="number" name="note" placeholder="Note" id="note" required/>
 										<div class="col-md-4">
 											<label for="inputState" class="form-label">Nom Categorie</label>
 											<select class="form-select" name="categorie" aria-label="Default select example">

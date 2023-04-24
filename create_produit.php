@@ -12,12 +12,12 @@ if (isset($_POST['bouton'])) {
   // Définir le dossier de destination pour l'image
   $place = "images/";
   // Déplacer l'image téléchargée vers le dossier de destination
+  $date_sortie = isset($_POST['date_sortie']) ? $_POST['date_sortie'] : date('Y-m-d H:i:s');
   move_uploaded_file($tmpname, $place . $image);
   $description = isset($_POST['description']) ? $_POST['description'] : '';
   $categorie = isset($_POST['categorie']) ? $_POST['categorie'] : '';
-  $prix = isset($_POST['prix']) ? $_POST['prix'] : '';
-  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `prix`, `categorie_id`) VALUES (?,?,?,?,?,?)');
-  $query->execute([$id, $nom, $image, $description, $prix, $categorie]);
+  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`date_sortie`, `nom`, `image`, `description`, `categorie_id`) VALUES (?,?,?,?,?,?)');
+  $query->execute([$id, $date_sortie, $nom, $image, $description, $categorie]);
 }
 
 
