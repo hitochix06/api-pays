@@ -34,8 +34,12 @@
 								<div class="input-group">
 									<label for="id">ID</label>
 									<input type="text" name="id" placeholder="26" value="auto" id="id">
+									<div class="col-mb-7 mt-3">
 									<label for="nom">Nom du Pays</label>
 									<input type="text" name="nom" placeholder="Nom du Pays" required/>
+												<label for="ville">Nom de ville</label>
+									<input type="text" name="ville" placeholder="Nom de ville" required/>
+									</div>
 									<div class="mb-3">
 										<label for="formFile" class="form-label">Image du Pays</label>
 										<input class="form-control" name="image" type="file" id="formFile">
@@ -47,11 +51,11 @@
 									<div class="mb-3">
 					      <!-- code pour choisir la date et l'heure actuelle -->
                 <label for="date_sortie">Date/Heurs</label>
-                <input type="datetime-local" name="date_sortie" value="<?= date('Y-m-d\TH:i') ?>" id="date_sortie">
+                <input type="datetime-local" name="date_sortie" value="<?= date('Y-m-d\TH:i') ?>" id="date_sortie" required/>
 								
 										<div class="col-md-4">
-											<label for="inputState" class="form-label">Nom Categorie</label>
-											<select class="form-select" name="categorie" aria-label="Default select example">
+											<label for="inputState" class="form-label">Choisir par continent</label>
+											<select class="form-select" name="categorie" aria-label="Default select example" required/>
 												<option selected>Choisir une catégorie</option>
 												{% for category in categories %}
 													<option value="{{category.id}}">{{category.type}}</option>
