@@ -18,8 +18,8 @@ if (isset($_POST['bouton'])) {
   $description = isset($_POST['description']) ? $_POST['description'] : '';
   $categorie = isset($_POST['categorie']) ? $_POST['categorie'] : '';
   $date_sortie = isset($_POST['date_sortie']) ? $_POST['date_sortie'] : '';
-  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `date_sortie`, `note`, `ville`, `categorie_id`) VALUES (?,?,?,?,?,?,?,?)');
-  $query->execute([$id, $nom, $image, $description, $note, $date_sortie, $ville, $categorie]);
+  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `date_sortie`, `ville`, `note`, `categorie_id`) VALUES (?,?,?,?,?,?,?,?)');
+  $query->execute([$id, $nom, $image, $description, $date_sortie, $ville, $note, $categorie]);
 }
 
 
