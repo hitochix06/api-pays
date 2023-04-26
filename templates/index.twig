@@ -10,8 +10,9 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 		<h1 class="h2">Dasboard</h1>
 		<div class="btn-toolbar mb-2 mb-md-0">
-			<div class="btn-group me-2">
-				<a class="btn btn-sm btn-outline-primary" href="create_produit.php">Ajouter un Pays</a>
+						<!-- code creation de bouton pour rajouter  -->
+					<div class="content read">
+						<a href="create_produit.php" class="create-contact">Ajouter un Pays</a>
 			</div>
 		</div>
 	</div>
@@ -23,7 +24,7 @@
 				<th scope="col">Pays</th>
 					<th scope="col">Ville</th>
 				<th scope="col">Description</th>
-				<th scope="col">Conttinent</th>
+				<th scope="col">continent</th>
 				<th scope="col">Note</th>
 				<th scope="col">Actions</th>
 			</tr>
@@ -40,7 +41,7 @@
 					<td>{{ produit.note }}
 						/10</td>
 					<td>
-						<div class="btn-group me-2">
+						<div class="me-2">
 											<a href="update_produit.php?id={{ produit.id }}" class="btn btn-warning">Modifier</a>
 													<a href="delete_produit.php?id={{ produit.id }}" class="btn btn-danger">Supprimer</a>
 						</div>

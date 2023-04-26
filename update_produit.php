@@ -13,7 +13,7 @@ if (isset($_GET['id'])) {
 
     $id = $_GET['id'];
     $nom = $_POST['nom'];
-    $description = $_POST['description'];
+    $description = addslashes($_POST['description']);
     $note = $_POST['note'];
     $categorie = $_POST['categorie'];
 
