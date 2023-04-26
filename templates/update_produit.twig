@@ -27,23 +27,28 @@
 						<!-- Ajout de produit -->
 						<div id="addProductForm" class="product-form">
 							<div class="input-row">
-								<div class="input-group">
+								<div class="input-group ">
 									<label for="id">ID</label>
 									<input type="text" name="id" placeholder="26" value="{{produit.id}}" id="id">
 									<label for="nom">Nom du produit</label>
 									<input type="text" name="nom" placeholder="Nom du produit" value="{{produit.nom}}" required/>
-									<div class="mb-3">
+									<div class="mb-3 mt-3">
 										<label for="ImportImage" class="form-label">Image du produit</label>
 										<input class="form-control" name="image" type="file" id="formFile" value="{{produit.image}}"/>
 									</div>
-									<div class="mb-3">
+									<div class="mb-3 mt-3">
 										<label for="Description" class="form-label">Description</label>
 										<textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3">{{produit.description}}</textarea>
 									</div>
 
 									<div class="mb-3">
-										<label for="prix">Prix du produit</label>
-										<input type="number" name="prix" placeholder="Prix du produit" id="prix" value="{{produit.prix}}" required/>
+<!-- code pour choisir la date et l'heure actuelle -->
+                <label for="date_sortie">Date/Heurs</label>
+                <input type="datetime-local" name="date_sortie" value="<?= date('Y-m-d\TH:i') ?>" id="date_sortie" required/>
+																 <label for="note">Note</label>
+                <input type="number" name="note" id="note" value="{{produit.note}}" required/>
+								
+						
 
 										<div class="col-md-4">
 											<label for="inputState" class="form-label">Nom Categorie</label>

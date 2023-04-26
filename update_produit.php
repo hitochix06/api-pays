@@ -14,7 +14,7 @@ if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $nom = $_POST['nom'];
     $description = $_POST['description'];
-    $prix = $_POST['prix'];
+    $note = $_POST['note'];
     $categorie = $_POST['categorie'];
 
     if (!empty($_FILES['image']['name'])) {
@@ -24,10 +24,10 @@ if (isset($_GET['id'])) {
       $place = "images/";
       move_uploaded_file($tmpname, $place . $new_image);
 
-      $query = $pdo->prepare("UPDATE `produits` SET `nom`= '$nom' , `image`= '$new_image' , `description`= '$description' ,`prix`= '$prix' , `categorie_id`= '$categorie' WHERE `id`= ? ");
+      $query = $pdo->prepare("UPDATE `produits` SET `nom`= '$nom' , `image`= '$new_image' , `description`= '$description' ,`note`= '$note' , `categorie_id`= '$categorie' WHERE `id`= ? ");
     } else {
       // Garder l'ancienne image
-      $query = $pdo->prepare("UPDATE `produits` SET `nom`= '$nom' , `description`= '$description' ,`prix`= '$prix' , `categorie_id`= '$categorie' WHERE `id`= ? ");
+      $query = $pdo->prepare("UPDATE `produits` SET `nom`= '$nom' , `description`= '$description' ,`note`= '$note' , `categorie_id`= '$categorie' WHERE `id`= ? ");
     }
     $query->execute([$id]);
   }
