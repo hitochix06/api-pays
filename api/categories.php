@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 require '../functions.php';
 
 //PDO query
-$query = $pdo->query("SELECT * FROM categories");
+$query = $pdo->query("SELECT * FROM categorie");
 //fetch all data
 
 // ...Faites votre requête SQL ici .ceci est un exemple !
