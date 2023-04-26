@@ -1,0 +1,75 @@
+{% extends "base.twig" %}
+
+
+{% block title %}Modifier produit
+{% endblock %}
+
+
+{% block main %}
+	<div id="mainContainer">
+		<div
+			class="form">
+			<!-- Contenu principal -->
+			<main
+				class="main-content">
+				<!-- En-tête -->
+				<div class="heading">
+					<span class="material-icons">
+						add
+					</span>
+					Modifier le produit
+				</div>
+				<form
+					action="" method="post" enctype="multipart/form-data">
+					<!-- Contenu -->
+					<div
+						class="content">
+						<!-- Ajout de produit -->
+						<div id="addProductForm" class="product-form">
+							<div class="input-row">
+								<div class="input-group ">
+									<label for="id">ID</label>
+									<input type="text" name="id" placeholder="26" value="{{produit.id}}" id="id">
+									<label for="nom">Nom du produit</label>
+									<input type="text" name="nom" placeholder="Nom du produit" value="{{produit.nom}}" required/>
+									<div class="mb-3 mt-3">
+										<label for="ImportImage" class="form-label">Image du produit</label>
+										<input class="form-control" name="image" type="file" id="formFile" value="{{produit.image}}"/>
+									</div>
+									<div class="mb-3 mt-3">
+										<label for="Description" class="form-label">Description</label>
+										<textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3">{{produit.description}}</textarea>
+									</div>
+
+									<div class="mb-3">
+<!-- code pour choisir la date et l'heure actuelle -->
+                <label for="date_sortie">Date/Heurs</label>
+                <input type="datetime-local" name="date_sortie" value="<?= date('Y-m-d\TH:i') ?>" id="date_sortie" />
+																 <label for="note">Note</label>
+                <input type="number" name="note" id="note" value="{{produit.note}}" />
+								
+						
+
+										<div class="col-md-4">
+											<label for="inputState" class="form-label">Nom Categorie</label>
+											<select class="form-select" name="categorie" aria-label="Default select example">
+												<option>Choisir une catégorie</option>
+												{% for category in categories %}
+													<option value="{{category.id}}" {{ category.id is same as produit.categorie_id ? "selected" : "" }}>{{category.type}}</option>
+												{% endfor %}>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Bouton -->
+							<input type="submit" name="bouton" value="Modifier" class="validate-button">
+						</br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</form></div>{% endblock %}

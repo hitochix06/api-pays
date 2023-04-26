@@ -6,86 +6,21 @@ $pdo = pdo_connect_mysql();
 if (isset($_POST['bouton'])) {
   $id = isset($_POST['id']) && !empty($_POST['id']) && $_POST['id'] != 'auto' ? $_POST['id'] : NULL;
   $nom = isset($_POST['nom']) ? $_POST['nom'] : '';
+  $ville = isset($_POST['ville']) ? $_POST['ville'] : '';
+  $note = isset($_POST['note']) ? $_POST['note'] : '';
   // image 
   $image = $_FILES["image"]["name"];
   $tmpname = $_FILES["image"]["tmp_name"];
   // Définir le dossier de destination pour l'image
   $place = "images/";
   // Déplacer l'image téléchargée vers le dossier de destination
-  move_uploaded_file($tmpname, $place.$image);
+  move_uploaded_file($tmpname, $place . $image);
   $description = isset($_POST['description']) ? $_POST['description'] : '';
   $categorie = isset($_POST['categorie']) ? $_POST['categorie'] : '';
-  $prix = isset($_POST['prix']) ? $_POST['prix'] : '';
-  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `prix`, `categorie_id`) VALUES (?,?,?,?,?,?)');
-  $query->execute([$id,$nom,$image,$description,$prix,$categorie]);
-
+  $date_sortie = isset($_POST['date_sortie']) ? $_POST['date_sortie'] : '';
+  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `date_sortie`, `ville`, `note`, `categorie_id`) VALUES (?,?,?,?,?,?,?,?)');
+  $query->execute([$id, $nom, $image, $description, $date_sortie, $ville, $note, $categorie]);
 }
 
-?>
 
-<?= template_header('Add New Article') ?>
-
-
-
- <!-- Conteneur principal -->
-
-
-<div id="mainContainer">
-    <div class="form">
-      <!-- Contenu principal -->
-      <main class="main-content">
-        <!-- En-tête -->
-        <div class="heading">
-          <span class="material-icons"> add </span>
-          Ajouter un produit
-        </div>
-        <form action="create_produit.php" method="post" enctype=multipart/form-data>
-          <!-- Contenu -->
-          <div class="content">
-            <!-- Ajout de produit -->
-            <div id="addProductForm" class="product-form">
-              <!-- Nom et type-->
-              <div class="input-row">
-                <div class="input-group">
-                  <label for="id">ID</label>
-                  <input type="text" name="id" placeholder="26" value="auto" id="id"> 
-                  <label for="nom">Nom du produit</label>
-                  <input type="text" name="nom" placeholder="Nom du produit"  required />
-                <div class="mb-3">
-                  <label for="formFile" class="form-label">Image du produit</label>
-                  <input class="form-control" name="image" type="file" id="formFile">
-                </div>
-                <div class="mb-3">
-                <label for="description" class="form-label">Description</label>
-                  <textarea class="form-control" id="description" name="description" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="prix">Prix du produit</label>
-                  <input type="number" name="prix" placeholder="Prix du produit" id="prix" required />
-                  <div class="col-md-4">
-                    <label for="inputState" class="form-label">Nom Categorie</label>
-                    <select class="form-select" name="categorie" aria-label="Default select example">
-                    <option selected>Choisir une catégorie</option>
-                      <?php foreach ($categories as $produit): ?>
-                      <option value="<?= $produit['id'] ?>"><?= $produit['type'] ?></option>
-                      <?php endforeach; ?>
-                   </select>
-                  </div>
-                  </div> 
-                </div>
-              </div>
-                  <!-- Bouton --> 
-                <input  type="submit" name="bouton"value="Ajouter" class="validate-button">
-                </br>
-            </div>
-          </div>
-        </main>
-      </form>
-</div>
-
-
-
-</body>
-
-</html>
-<?= template_footer() ?>
+echo $twig->render("create_produit.twig", array("categories" => $categories));

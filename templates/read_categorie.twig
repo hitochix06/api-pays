@@ -1,0 +1,59 @@
+{% extends "base.twig" %}
+
+
+{% block title %}Afficher catégories
+{% endblock %}
+
+
+{% block main %}
+	<div class="content read">
+		<a href="create_categorie.php" class="create-contact">Ajouter Tag
+		</a>
+		<table>
+			<thead>
+				<tr>
+					<td>#</td>
+					<td>Continents</td>
+					<td></td>
+				</tr>
+			</thead>
+			<tbody>
+				{% for categorie in categories %}
+
+					<tr>
+						<td>{{categorie.id}}</td>
+						<td>
+							{{categorie.type}}</td>
+						<td class="actions">
+							<a href="update_categorie.php?id={{categorie.id}}" class="edit">
+								<i class="fas fa-pen fa-xs"></i>
+							</a>
+							<a href="delete_categorie.php?id={{categorie.id}}" class="trash">
+								<i class="fas fa-trash fa-xs"></i>
+							</a>
+						</td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="pagination">
+			{% if page > 1 %}
+
+				<a href="read_categorie.php?page={{ page - 1 }}">
+					<i class="fas fa-angle-double-left fa-sm"></i>
+				</a>
+			{% endif %}
+
+			{% if page * records_per_page < num_categorie %}
+				<a href="read_categorie.php?page={{ page + 1 }}">
+					<i class="fas fa-angle-double-right fa-sm"></i>
+				</a>
+			{% endif %}
+
+		</div>
+	</div>
+{% endblock %}
+
+
+
+

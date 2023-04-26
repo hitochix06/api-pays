@@ -1,0 +1,103 @@
+{% extends "base.twig" %}
+
+
+{% block title %}Accueil
+{% endblock %}
+
+
+{% block main %}
+<div class="container">
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+		<h1 class="h2">Dasboard</h1>
+		<div class="btn-toolbar mb-2 mb-md-0">
+						<!-- code creation de bouton pour rajouter  -->
+					<div class="content read">
+						<a href="create_produit.php" class="create-contact">Ajouter un Pays</a>
+			</div>
+		</div>
+	</div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Image</th>
+				<th scope="col">Pays</th>
+					<th scope="col">Ville</th>
+				<th scope="col">Description</th>
+				<th scope="col">continent</th>
+				<th scope="col">Note</th>
+				<th scope="col">Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for produit in produits %}
+				<tr>
+					<th scope="row">{{ produit.id }}</th>
+					<td><img src="./images/{{ produit.image }}" class="img-fluid" alt="{{ produit.nom }}" style="max-height: 50px;"/></td>
+					<td>{{ produit.nom }}</td>
+					<td>{{ produit.ville }}</td>
+					<td class="text-truncate" style="max-width: 150px;">{{ produit.description }}</td>
+					<td>{{ produit.type }}</td>
+					<td>{{ produit.note }}
+						/10</td>
+					<td>
+						<div class="me-2">
+											<a href="update_produit.php?id={{ produit.id }}" class="btn btn-warning">Modifier</a>
+													<a href="delete_produit.php?id={{ produit.id }}" class="btn btn-danger">Supprimer</a>
+						</div>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	</div>
+
+
+{# 
+	<div
+		class="content">
+		<!-- Conteneur principal -->
+		<div id="mainContainer">
+			<div
+				class="form">
+				<!-- Contenu principal -->
+				<main
+					class="main-content">
+					<!-- En-tête -->
+					<div class="heading">
+					Dasboard
+					</div>
+
+					<!-- code creation de bouton pour rajouter  -->
+					<div class="content read">
+						<a href="create_produit.php" class="create-contact">Ajouter un Pays</a>
+
+
+						<div class="container">
+							<br>
+							<div class="row">
+								{% for produit in produits %}
+									<div class="col-4 mb-5">
+										<div class="card" style="width: 18rem;">
+											<img src="./images/{{ produit.image }}" width="150px" height="200px" class="card-img-top" alt="...">
+											<div class="card-body">
+												<center>
+													<h5 class="card-title">{{ produit.nom }}</h5>
+													<p class="card-text">{{ produit.description }}</p>
+													<p class="card-text">{{ produit.type }}</p>
+													<p class="card-text">{{ produit.prix }}
+														Euro</p>
+													<a href="update_produit.php?id={{ produit.id }}" class="btn btn-warning">Modifier</a>
+													<a href="delete_produit.php?id={{ produit.id }}" class="btn btn-danger">Supprimer</a>
+												</center>
+
+											</div>
+										</div>
+									</div>
+								{% endfor %}
+							</div>
+
+						</div> #}
+
+
+					{% endblock %}

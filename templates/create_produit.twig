@@ -1,0 +1,77 @@
+{% extends "base.twig" %}
+
+{% block title %}Ajouter un produit
+{% endblock %}
+
+{% block main %}
+
+	<!-- Conteneur principal -->
+
+
+	<div id="mainContainer">
+		<div
+			class="form">
+			<!-- Contenu principal -->
+			<main
+				class="main-content">
+				<!-- En-tête -->
+				<div class="heading">
+					<span class="material-icons">
+						add
+					</span>
+					Ajouter un Pays
+				</div>
+				<form
+					action="create_produit.php" method="post" enctype="multipart/form-data">
+					<!-- Contenu -->
+					<div
+						class="content">
+						<!-- Ajout de produit -->
+						<div
+							id="addProductForm" class="product-form">
+							<!-- Nom et type-->
+							<div class="input-row">
+								<div class="input-group">
+									<label for="id">ID</label>
+									<input type="text" name="id" placeholder="26" value="auto" id="id">
+									<div class="col-mb-7 mt-3">
+									<label for="nom">Nom du Pays</label>
+									<input type="text" name="nom" placeholder="Nom du Pays" required/>
+												<label for="ville">Nom de ville</label>
+									<input type="text" name="ville" placeholder="Nom de ville" required/>
+									</div>
+									<div class="mb-3 mt-3">
+										<label for="formFile" class="form-label">Image du Pays</label>
+										<input class="form-control" name="image" type="file" id="formFile">
+									</div>
+									<div class="mb-3">
+										<label for="description" class="form-label">Description</label>
+										<textarea class="form-control" id="description" name="description" rows="3"></textarea>
+									<div class="mb-3 mt-3">
+					      <!-- code pour choisir la date et l'heure actuelle -->
+                <label for="date_sortie">Date/Heurs</label>
+                <input type="datetime-local" name="date_sortie" value="<?= date('Y-m-d\TH:i') ?>" id="date_sortie" required/>
+																 <label for="note">Note</label>
+                <input type="number" name="note" id="note"  required/>
+																</div>
+										<div class="col-md-4">
+											<label for="inputState" class="form-label">Choisir par continent</label>
+											<select class="form-select" name="categorie" aria-label="Default select example" required/>
+												<option selected>Choisir une catégorie</option>
+												{% for category in categories %}
+													<option value="{{category.id}}">{{category.type}}</option>
+												{% endfor %}
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- Bouton -->
+							<input type="submit" name="bouton" value="Ajouter" class="validate-button">
+						</br>
+					</div>
+				</div>
+			</main>
+		</form>
+	</div>
+{% endblock %}
