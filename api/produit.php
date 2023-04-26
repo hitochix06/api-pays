@@ -9,6 +9,6 @@ $query = $pdo->query("SELECT * FROM produits");
 //fetch all data
 
 // ...Faites votre requête SQL ici .ceci est un exemple !
-$categories = $query->fetchAll(PDO::FETCH_ASSOC);
+$produits = $query->fetchAll(PDO::FETCH_ASSOC);
 
-echo json_encode($categories);
+echo json_encode($produits);
