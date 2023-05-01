@@ -2,10 +2,10 @@
 require 'vendor/autoload.php';
 function pdo_connect_mysql()
 {
-	$DATABASE_HOST = 'db5012870098.hosting-data.io';
-	$DATABASE_USER = 'dbu5674836';
-	$DATABASE_PASS = '0QZqa&oq6?YIi@o7v?Ku';
-	$DATABASE_NAME = 'dbs10808034';
+	$DATABASE_HOST = 'localhost';
+	$DATABASE_USER = 'root';
+	$DATABASE_PASS = '';
+	$DATABASE_NAME = 'phpproduit';
 	try {
 		return new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
 	} catch (PDOException $exception) {
