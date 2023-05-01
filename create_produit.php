@@ -17,9 +17,10 @@ if (isset($_POST['bouton'])) {
   move_uploaded_file($tmpname, $place . $image);
   $description = isset($_POST['description']) ? $_POST['description'] : '';
   $categorie = isset($_POST['categorie']) ? $_POST['categorie'] : '';
+  $argent = isset($_POST['argent']) ? $_POST['argent'] : '';
   $date_sortie = isset($_POST['date_sortie']) ? $_POST['date_sortie'] : '';
-  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `date_sortie`, `ville`, `note`, `categorie_id`) VALUES (?,?,?,?,?,?,?,?)');
-  $query->execute([$id, $nom, $image, $description, $date_sortie, $ville, $note, $categorie]);
+  $query = $pdo->prepare('INSERT INTO `produits`(`id`,`nom`, `image`, `description`, `date_sortie`, `ville`, `note`, `argent`, `categorie_id`) VALUES (?,?,?,?,?,?,?,?,?)');
+  $query->execute([$id, $nom, $image, $description, $date_sortie, $ville, $note, $argent, $categorie]);
 }
 
 
